@@ -3944,5 +3944,18 @@
         });
 
     </script>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./service-worker.js")
+        .then(() => {
+          console.log("Brainy Academy service worker registered successfully.");
+        })
+        .catch(error => {
+          console.warn("Service worker registration failed:", error);
+        });
+    });
+  }
+</script>    
 </body>
 </html>
